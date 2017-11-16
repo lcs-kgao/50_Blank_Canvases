@@ -40,6 +40,10 @@ canvas.drawLine(fromX: 0, fromY: 0, toX: 200, toY: 0)
 canvas.translate(byX: 200, byY: 0)
 canvas.rotate(by: 120)
 
+//Step 4 : Drwa a side and rotate
+canvas.drawLine(fromX: 0, fromY: 0, toX: 200, toY: 0)
+canvas.translate(byX: 200, byY: 0)
+canvas.rotate(by: 120)
 
 
 /*:
