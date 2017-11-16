@@ -22,10 +22,45 @@ let canvas = Canvas(width: 400, height: 300)
  
  Use whitespace and comments as appropriate.
  */
-// Replace this comment with your first comment – what is the goal of the code you're about to write?
+// Example of a function
+func someFunction(firstparameterName : Int, secondParameterName : Int) {
 
+//In the function body (between the curly brackets first ParameterName and secondParametername refer to the values provided when the function was called)
+    print(firstparameterName)
+    print("---")
+    print(secondParameterName)
+    print("===")
+}
 
+someFunction(firstparameterName: 5, secondParameterName: 7)
+someFunction(firstparameterName: 15, secondParameterName: 10)
+someFunction(firstparameterName: 100000000, secondParameterName: 1)
 
+func drawRegularPolygon(withSides : Int, sideLength: Int, StartX : Int, StartY : Int){
+    //Find interior angle
+    let interior = (withSides - 2) * 180 / withSides
+
+    //Find the exterior angle
+    let exterior = 180 - interior
+    
+    //Move to the starting posisiton
+    canvas.translate(byX: StartX, byY: StartY)
+    
+    //loop for however many sies we have
+    for _ in 1...withSides{
+        
+        //Draw the line
+        canvas.drawLine(fromX: 0, fromY: 0, toX: sideLength, toY: 0)
+        
+        //tranlate to end of the line (move the turtle
+        canvas.translate(byX: sideLength, byY: 0)
+        
+        //Rotate
+        canvas.rotate(by: Degrees(exterior))
+    }
+}
+
+drawRegularPolygon(withSides: <#T##Int#>, sideLength: <#T##Int#>, StartX: <#T##Int#>, StartY: <#T##Int#>)
 /*:
  ## Use source control
  To keep your work organized, and receive feedback, source control is a must.

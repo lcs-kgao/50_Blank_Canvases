@@ -1,5 +1,5 @@
 //: [Previous](@previous) / [Next](@next)
-//: # A Blank Canvas
+//: # Using a function
 //:
 //: Use this page to experiment. Have fun!
 /*:
@@ -22,8 +22,25 @@ let canvas = Canvas(width: 400, height: 300)
  
  Use whitespace and comments as appropriate.
  */
-// Replace this comment with your first comment – what is the goal of the code you're about to write?
+// Draw a pentagon
 
+//Step 1 : Move to the starting point
+canvas.translate(byX: 75, byY: 100)
+canvas.drawAxes()
+canvas.defaultLineWidth = 10
+let sides = 5
+let angle = (sides - 2)*180
+
+// Use a loop to draw four sides
+for _ in 1...sides {//Loop four times creates no variable
+    
+    
+    //Step 2 : Draw a side and and rotate
+    canvas.drawLine(fromX: 0, fromY: 0, toX: 20, toY: 0)
+    canvas.translate(byX: 200, byY: 0)
+    canvas.rotate(by: Degrees(angle/sides))
+    
+}
 
 
 /*:
